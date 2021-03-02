@@ -12,7 +12,8 @@ then
     sleep 10s
     sudo alsa force-reload
     sleep 10s
-    sudo sed -i '$a options snd-hda-intelmodel=auto'
+    sudo sed -i '$a options snd-hda-intel model=auto' /etc/modprobe.d/alsa-base.conf
+    sudo alsa force-reload
     sudo reboot
 fi
 #check for the cards if they are visible now
